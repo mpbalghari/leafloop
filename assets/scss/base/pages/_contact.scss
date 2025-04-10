@@ -1,0 +1,206 @@
+.contact {
+    padding: 5rem 0;
+    // background: $white;
+    
+
+    h2 {
+        font-size: 2.5rem;
+        color: $primary-perp;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+    }
+
+    .contact-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .contact-info {
+        flex: 1;
+
+        h3 {
+            font-size: 1.75rem;
+            color: $text-primary;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-description {
+            font-size: 1.125rem;
+            color: $text-secondary;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+
+                .contact-icon {
+                    font-size: 1.5rem;
+                    color: $primary-color;
+                }
+
+                a, p {
+                    font-size: 1rem;
+                    color: $text-primary;
+                    text-decoration: none;
+                    margin: 0;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+                
+                
+            }
+        }
+    }
+
+    .contact-form {
+        flex: 1;
+
+        h3 {
+            font-size: 1.75rem;
+            color: $text-primary;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .form-static {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .form-group {
+                input, textarea {
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 1px solid $border-light;
+                    border-radius: 0.5rem;
+                    font-size: 1rem;
+                    color: $text-primary;
+                    background: $background-light;
+
+                    &::placeholder {
+                        color: $text-light;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border-color: $primary-color;
+                    }
+                }
+
+                textarea {
+                    resize: vertical;
+                    min-height: 8rem;
+                }
+            }
+
+            .form-submit {
+                padding: 0.75rem 2rem;
+                background: $primary-color;
+                color: $white;
+                border: none;
+                border-radius: 2rem;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+
+                &:hover {
+                    background: lighten($primary-color, 10%);
+                }
+            }
+        }
+
+        .form-note {
+            font-size: 0.875rem;
+            color: $text-light;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 62rem) { // 992px
+    .contact {
+        .contact-content {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}
+
+@media (max-width: 48rem) { // 768px
+    .contact {
+        padding: 3rem 0;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .contact-content {
+            padding: 0 0.5rem;
+
+            .contact-info {
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                .contact-description {
+                    font-size: 1rem;
+                }
+
+                .contact-details {
+                    li {
+                        .contact-icon {
+                            font-size: 1.25rem;
+                        }
+
+                        a, p {
+                            font-size: 0.9375rem;
+                        }
+                    }
+                }
+            }
+
+            .contact-form {
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                .form-static {
+                    .form-group {
+                        input, textarea {
+                            padding: 0.625rem;
+                            font-size: 0.9375rem;
+                        }
+                    }
+
+                    .form-submit {
+                        padding: 0.625rem 1.5rem;
+                        font-size: 0.9375rem;
+                    }
+                }
+
+                .form-note {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.reviews {
+    padding: 2rem 0;
+    background: $background-light;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $primary-perp;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        position: relative;
+    }
+
+    .review-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .review-box {
+        background: $white;
+        border-left: 0.25rem solid $primary-color;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 .2rem .2rem 0 $primary-color;
+
+        &:before {
+            content: '❝';
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 4rem;
+            color: $light-gray;
+            opacity: 0.2;
+        }
+
+        .review-text {
+            font-size: 1.125rem;
+            color: $text-secondary;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .author-avatar {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid $secondary-color;
+            }
+
+            .author-info {
+                h3 {
+                    font-size: 1.25rem;
+                    color: $text-primary;
+                    margin: 0;
+                    font-weight: 600;
+                }
+
+                .author-title {
+                    font-size: 0.875rem;
+                    color: $text-light;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 62rem) { // 992px
+    .reviews {
+        .review-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 48rem) { // 768px
+    .reviews {
+        padding: 3rem 0;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+
+            &:before {
+                width: 2.5rem;
+            }
+        }
+
+        .review-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 0 0.5rem;
+        }
+
+        .review-box {
+            padding: 1.5rem;
+
+            .review-text {
+                font-size: 1rem;
+            }
+
+            .review-author {
+                .author-avatar {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+
+                .author-info {
+                    h3 {
+                        font-size: 1.125rem;
+                    }
+
+                    .author-title {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}

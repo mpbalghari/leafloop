@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Leafloop | Plant Seeds for a Greener Future</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Navigation -->
+
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="#">
+          <img src="assets/images/logo.png" alt="Leafloop">
+        </a>
+      </div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#about" class="nav-link">About us</a></li>
+        <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="background-image: url('assets/images/shap.svg');">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Plant Seeds for a Greener Future</h1>
+        <p>Let Nature Take Root. Handpicked seeds, grown for your garden.</p>
+        <a href="#products" class="hero-btn">Get Started</a>
+        <div class="explore-more">
+          <span>Explore More</span>
+          <span class="arrow-down">&#8595;</span> <!-- Downward arrow symbol -->
+        </div>
+      </div>
+      <div class="hero-svg">
+        <img src="/assets/images/hero-a.svg" alt="Hero svg">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- prduct section start-->
+  <section class="products" style="background-image: url(./assets/images/wave-to-top.svg);background-position:bottom">
+    <div class="container" >
+      <h2>Explore Our Seed Collection</h2>
+      <div  id="products"></div>
+      <div class="product-filters">
+        <button class="filter-btn active" data-filter="all">All Seeds</button>
+        <button class="filter-btn" data-filter="herbs">Herbs</button>
+        <button class="filter-btn" data-filter="flowers">Flowers</button>
+        <button class="filter-btn" data-filter="vegetables">Vegetables</button>
+      </div>
+      <div class="product-grid">
+        <div class="product-card" data-product="1" data-category="herbs">
+          <div class="product-image">
+            <img src="assets/images/seed.svg" alt="Herb Seed Mix">
+            <div class="product-badge">Best Seller</div>
+          </div>
+          <div class="product-info">
+            <h3>Herb Seed Mix</h3>
+            <p class="price">$12.99</p>
+            <div class="product-rating">★★★★☆ (4.8)</div>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="product-card" data-product="2" data-category="flowers">
+          <div class="product-image">
+            <img src="assets/images/seed.svg" alt="Wildflower Blend">
+            <div class="product-badge">New Arrival</div>
+          </div>
+          <div class="product-info">
+            <h3>Wildflower Blend</h3>
+            <p class="price">$19.99</p>
+            <div class="product-rating">★★★★★ (5.0)</div>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+        <div class="product-card" data-product="3" data-category="vegetables">
+          <div class="product-image">
+            <img src="assets/images/seed.svg" alt="Vegetable Garden Kit">
+            <div class="product-badge">Seasonal</div>
+          </div>
+          <div class="product-info">
+            <h3>Vegetable Garden Kit</h3>
+            <p class="price">$29.99</p>
+            <div class="product-rating">★★★★☆ (4.5)</div>
+            <button class="view-details">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Detail Modal -->
+      <div class="product-modal">
+        <div class="modal-content">
+          <span class="close-modal">×</span>
+          <div class="modal-body">
+            <div class="modal-image-wrapper">
+              <img src="" alt="Seed Product Image" class="modal-image">
+            </div>
+            <div class="modal-details">
+              <h3 class="modal-title"></h3>
+              <p class="modal-price"></p>
+              <div class="modal-rating"></div>
+              <p class="modal-description"></p>
+              <ul class="modal-features"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- second section start -->
+  <section class="hero" style="padding-top: 2rem;background-image: url(./assets/images/wave.-to-bottomsvg.svg);background-origin: top;">
+    <div class="container pt-px">
+      <div class="hero-svg">
+        <img src="/assets/images/hero-b.svg" alt="Hero Illustration">
+      </div>
+      <div class="hero-content">
+        <h1>Grow Life, One Seed at a Time</h1>
+        <p>Nurture your space with quality seeds, crafted by nature, chosen by Leafloop.</p>
+        <a href="#about" class="hero-btn">Get Started</a>
+        <div class="explore-more">
+          <span>Explore More</span>
+          <span class="arrow-down">&#8595;</span> <!-- Downward arrow symbol -->
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- second section end -->
+  <!-- product section's script -->
+
+  <script>
+    const productCards = document.querySelectorAll('.product-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const modal = document.querySelector('.product-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const modalImage = document.querySelector('.modal-image');
+    const modalTitle = document.querySelector('.modal-title');
+    const modalPrice = document.querySelector('.modal-price');
+    const modalRating = document.querySelector('.modal-rating');
+    const modalDescription = document.querySelector('.modal-description');
+    const modalFeatures = document.querySelector('.modal-features');
+
+    const products = {
+      1: {
+        image: 'assets/images/seed.svg',
+        title: 'Herb Seed Mix',
+        price: '$12.99',
+        rating: '★★★★☆ (4.8)',
+        description: 'A curated blend of aromatic herb seeds perfect for your kitchen garden.',
+        features: ['Basil, Thyme, Mint', 'Non-GMO', 'High Germination Rate', 'Easy to Grow']
+      },
+      2: {
+        image: 'assets/images/seed.svg',
+        title: 'Wildflower Blend',
+        price: '$19.99',
+        rating: '★★★★★ (5.0)',
+        description: 'Transform your yard with this vibrant mix of native wildflower seeds.',
+        features: ['Pollinator-Friendly', 'Drought-Tolerant', 'Season-Long Bloom', 'Low Maintenance']
+      },
+      3: {
+        image: 'assets/images/seed.svg',
+        title: 'Vegetable Garden Kit',
+        price: '$29.99',
+        rating: '★★★★☆ (4.5)',
+        description: 'Grow your own food with this complete vegetable seed starter kit.',
+        features: ['Tomato, Carrot, Lettuce', 'Organic Seeds', 'Beginner-Friendly', 'High Yield']
+      }
+    };
+
+    // Product Card Click Handler
+    productCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.classList.contains('view-details')) {
+          const productId = card.getAttribute('data-product');
+          const product = products[productId];
+
+          modalImage.src = product.image;
+          modalTitle.textContent = product.title;
+          modalPrice.textContent = product.price;
+          modalRating.textContent = product.rating;
+          modalDescription.textContent = product.description;
+
+          modalFeatures.innerHTML = '';
+          product.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            modalFeatures.appendChild(li);
+          });
+
+          modal.style.display = 'flex';
+        }
+      });
+    });
+
+    // Filter Button Handler
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        productCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Modal Close Handlers
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+  <!-- pr0duct section end-->
+  <!-- contact and footer start -->
+  
+  <!-- Sections Loaded Dynamically -->
+  <main>
+    <!-- <div id="home"></div> -->
+    <div id="products"></div>
+    <div id="reviews"></div>
+    <div id="about"></div>
+    <div id="contact"></div>
+  </main>
+
+<!-- Contact Section -->
+<section class="contact" style="background-image: url(./assets/images/shap.svg);background-position: bottom left;background-repeat: no-repeat;">
+  <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-content">
+          <div class="contact-info">
+              <h3>Get in Touch</h3>
+              <p class="contact-description">Have questions about our seeds or need gardening tips? Reach out to us—we’re here to help!</p>
+              <ul class="contact-details">
+                  <li>
+                      <span class="contact-icon">✉️</span>
+                      <a href="mailto:info@leafloop.com">info@leafloop.com</a>
+                  </li>
+                  <li>
+                      <span class="contact-icon">📞</span>
+                      <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  </li>
+                  <li>
+                      <span class="contact-icon">📍</span>
+                      <p>123 Green Lane, Eco City, USA</p>
+                  </li>
+              </ul>
+          </div>
+          <div class="contact-form">
+              <h3>Send a Message</h3>
+              <form action="#" class="form-static">
+                  <div class="form-group">
+                      <input type="text" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="email" placeholder="Your Email" required>
+                  </div>
+                  <div class="form-group">
+                      <textarea placeholder="Your Message" rows="5" required></textarea>
+                  </div>
+                  <button type="submit" class="form-submit">Send Message</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-brand">
+              <img src="assets/images/logo.png" alt="Leafloop Logo" class="footer-logo">
+              <p>© 2025 Leafloop. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#products">Products</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                  <a href="https://facebook.com/leafloop" target="_blank" aria-label="Facebook">
+                      <svg class="social-icon" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                  </a>
+                  <a href="https://twitter.com/leafloop" target="_blank" aria-label="Twitter">
+                      <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724 9.864 9.864 0 0 1-3.127 1.195 4.916 4.916 0 0 0-8.379 4.482 13.944 13.944 0 0 1-10.126-5.14 4.916 4.916 0 0 0 1.523 6.573 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.917 4.917 0 0 0 4.59 3.417A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.057 0 14.009-7.507 14.009-14.01 0-.213-.005-.425-.014-.637A10.012 10.012 0 0 0 24 4.557z"/></svg>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+  <!-- Scripts -->
+  <script src="assets/js/load-pages.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

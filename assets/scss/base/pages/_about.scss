@@ -1,0 +1,202 @@
+.about {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom, $white 0%, $background-light 100%);
+
+    h2 {
+        font-size: 2.5rem;
+        color: $primary-perp;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 4rem;
+            height: 0.25rem;
+            background: $primary-color;
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .about-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .about-text {
+        flex: 1;
+
+        h3 {
+            font-size: 1.75rem;
+            color: $primary-perp;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-description {
+            font-size: 1.125rem;
+            color: $text-secondary;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+
+            .highlight-item {
+                text-align: center;
+
+                .highlight-icon {
+                    font-size: 2rem;
+                    color: $primary-color;
+                    margin-bottom: 0.5rem;
+                }
+
+                h4 {
+                    font-size: 1rem;
+                    color: $text-primary;
+                    margin-bottom: 0.25rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.875rem;
+                    color: $text-light;
+                    margin: 0;
+                }
+            }
+        }
+
+        .about-cta {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: $primary-color;
+            color: $white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: lighten($primary-color, 10%);
+            }
+        }
+    }
+
+    .about-image {
+        flex: 1;
+        position: relative;
+        text-align: center;
+
+        .main-image {
+            max-width: 90%;
+            height: auto;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba($secondary-color, 0.9);
+            color: $white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width: 62rem) { // 992px
+    .about {
+        .about-content {
+            flex-direction: column;
+            gap: 2rem;
+
+            .about-text {
+                .about-highlights {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            .about-image {
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: 48rem) { // 768px
+    .about {
+        padding: 3rem 0;
+
+        h2 {
+            font-size: 2rem;
+
+            &:after {
+                width: 3rem;
+            }
+        }
+
+        .about-content {
+            padding: 0 0.5rem;
+
+            .about-text {
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                .about-description {
+                    font-size: 1rem;
+                }
+
+                .about-highlights {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+
+                    .highlight-item {
+                        .highlight-icon {
+                            font-size: 1.75rem;
+                        }
+
+                        h4 {
+                            font-size: 0.9375rem;
+                        }
+
+                        p {
+                            font-size: 0.8125rem;
+                        }
+                    }
+                }
+
+                .about-cta {
+                    padding: 0.625rem 1.5rem;
+                    font-size: 0.9375rem;
+                }
+            }
+
+            .about-image {
+                max-width: 100%;
+
+                .image-overlay {
+                    font-size: 0.75rem;
+                    padding: 0.375rem 0.75rem;
+                }
+            }
+        }
+    }
+}
